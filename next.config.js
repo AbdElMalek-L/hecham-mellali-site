@@ -1,12 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    esmExternals: 'loose'
-  },
-  webpack: (config) => {
-    config.externals = [...config.externals, { canvas: "canvas" }]; // required to make pdfjs work
-    return config;
-  },
-};
+const isProd = process.env.NODE_ENV === 'production';
 
-module.exports = nextConfig;
+module.exports = {
+  assetPrefix: isProd ? '/hecham-mellali-site/' : '',
+  images: {
+    unoptimized: true,
+  },
+  output: 'export',
+};
