@@ -136,7 +136,7 @@ function MainComponent() {
     const serviceInfo = getServiceInfo();
 
     const message = encodeURIComponent(
-      `مرحباً، أود ${type === "recharge" ? "شحن" : "سحب"} ${
+      `مرحباً، أود ${type === "recharge" ? " سحب " : "شحن"} ${
         serviceInfo?.displayName
       }\n` +
         `البنك: ${selectedBank.arabicName}\n` +

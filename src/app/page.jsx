@@ -253,7 +253,70 @@ function MainComponent() {
           </div>
         </div>
       </nav>
-
+              <div
+        className="absolute top-32 right-8 md:right-12 z-20 fade-slide-up opacity-0"
+        style={{ animationDelay: "1.2s" }}
+      >
+        <div className="relative group">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-[#FFD700] rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-all duration-500 animate-pulse"></div>
+          <div className="relative bg-black/90 border border-[#FFD700]/20 p-6 rounded-2xl backdrop-blur-xl transform hover:scale-105 transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,215,0,0.3)]">
+            <div className="absolute -top-3 -right-3">
+              <div className="bg-[#FFD700] text-black px-4 py-1 rounded-full text-sm font-bold shadow-lg transform rotate-12 hover:rotate-0 transition-all duration-300">
+                حصري
+              </div>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <i className="fas fa-gift text-[#FFD700] text-xl"></i>
+                <h3 className="text-[#FFD700] font-bold">كود ترحيبي</h3>
+              </div>
+              <div className="bg-[#FFD700]/10 border border-[#FFD700]/20 rounded-lg p-3 text-center relative group">
+                <span className="text-2xl font-bold text-white tracking-wider font-mono select-all">
+                  HICHA2M
+                </span>
+                <div className="absolute -top-2 -right-2 scale-0 group-hover:scale-100 transition-transform duration-300">
+                  <div className="bg-[#FFD700] text-black px-2 py-1 rounded text-xs font-bold shadow-lg">
+                    انقر للنسخ
+                  </div>
+                </div>
+              </div>
+              <p className="text-white/80 text-sm text-right">
+                احصل على خصم فوري عند استخدام هذا الكود
+              </p>
+              <button
+                onClick={() => {
+                  navigator.clipboard
+                    .writeText("HICHA2M")
+                    .then(() => {
+                      const button = document.getElementById("copyButton");
+                      const originalText = button.innerHTML;
+                      button.innerHTML =
+                        '<i class="fas fa-check text-[#FFD700]"></i> تم النسخ';
+                      setTimeout(() => {
+                        button.innerHTML = originalText;
+                      }, 2000);
+                    })
+                    .catch((err) => {
+                      console.error("Failed to copy:", err);
+                      const button = document.getElementById("copyButton");
+                      const originalText = button.innerHTML;
+                      button.innerHTML =
+                        '<i class="fas fa-times text-red-500"></i> فشل النسخ';
+                      setTimeout(() => {
+                        button.innerHTML = originalText;
+                      }, 2000);
+                    });
+                }}
+                id="copyButton"
+                className="w-full bg-[#FFD700]/10 hover:bg-[#FFD700]/20 text-[#FFD700] border border-[#FFD700]/30 px-4 py-2 rounded-lg transition-all duration-300 text-sm font-bold flex items-center justify-center gap-2 group/btn mt-3"
+              >
+                <span>نسخ الكود</span>
+                <i className="fas fa-copy group-hover/btn:scale-110 transition-transform duration-300"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="relative bg-black overflow-hidden pt-32">
         <div
           className="absolute inset-0"
@@ -278,7 +341,10 @@ function MainComponent() {
             ></div>
           ))}
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
+        <div className="h-[150px]">
+
+        </div>
+        <div className="max-w-7xl mx-auto px- sm:px-6 lg:px-8 py-24 relative">
           <div className="flex flex-col items-center">
             <div className="w-full text-center md:text-right mb-12">
               <div className="space-y-8 max-w-3xl mx-auto md:mr-0">
