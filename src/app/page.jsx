@@ -12,6 +12,8 @@ function MainComponent() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("home");
 
+  const payment = "/hecham-mellali-site/payment";
+
   useEffect(() => {
     setIsVisible(true);
     
@@ -374,8 +376,7 @@ function MainComponent() {
                       </span>
                     </a>
                     <a
-                      // href={`/payment?service=${product.name}&type=recharge`}
-                      href={"/payment"}
+                      href={`${payment}?service=${product.name}&type=recharge`}
 
                       className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
                     >
