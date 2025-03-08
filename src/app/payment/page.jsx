@@ -74,72 +74,51 @@ function MainComponent() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
   const banks = [
     {
       id: 1,
-      name: "بنك CIH",
-      logo: "https://ucarecdn.com/0c51593e-2011-4486-8dd5-b24f4137bc8a/-/format/auto/",
-      arabicName: "البنك التجاري العقاري والسياحي",
-      withdrawalAddress: "CIH-1234",
+      name: "التجاري وفا بنك",
+      logo: "https://i.ibb.co/MDMKd9dx/attijariwafabank.jpg",
+      arabicName: "التجاري وفا بنك",
+      withdrawalAddress: "AWB-1001",
     },
     {
       id: 2,
-      name: "بنك المغرب",
-      logo: "https://ucarecdn.com/f8b6c7c5-5c8c-4c89-a4b2-d5c3ec64c42e/-/format/auto/",
-      arabicName: "بنك المغرب",
-      withdrawalAddress: "BAM-5678",
+      name: "بريد بنك",
+      logo: "https://i.ibb.co/HLxbP1KF/barid.png",
+      arabicName: "بريد بنك",
+      withdrawalAddress: "PB-1002",
     },
     {
       id: 3,
-      name: "التجاري وفا بنك",
-      logo: "https://ucarecdn.com/4c7e09df-497f-44e5-9077-0aa52c9c1299/-/format/auto/",
-      arabicName: "التجاري وفا بنك",
-      withdrawalAddress: "AWB-9012",
+      name: "Inwi",
+      logo: "https://i.ibb.co/dJw5qtq6/brand.gif",
+      arabicName: "إنوي",
+      withdrawalAddress: "IM-1003",
     },
     {
       id: 4,
-      name: "البنك الإفريقي",
-      logo: "https://ucarecdn.com/e9e4d66c-06f4-4c48-9cf4-c1e0e9d5f0d9/-/format/auto/",
-      arabicName: "البنك الإفريقي",
-      withdrawalAddress: "BAF-3456",
+      name: "كاش بلوس",
+      logo: "https://i.ibb.co/KcPGVdRJ/cashplus.jpg",
+      arabicName: "كاش بلوس",
+      withdrawalAddress: "CP-1004",
     },
     {
       id: 5,
-      name: "BMCI بنك",
-      logo: "https://ucarecdn.com/1c2a81d5-8fc4-4d4c-9e77-114e7e75445c/-/format/auto/",
-      arabicName: "البنك المغربي للتجارة والصناعة",
-      withdrawalAddress: "BMCI-7890",
+      name: "بنك CIH",
+      logo: "https://i.ibb.co/ymsFDKnH/cih.png",
+      arabicName: "البنك التجاري العقاري والسياحي",
+      withdrawalAddress: "CIH-1005",
     },
     {
       id: 6,
-      name: "القرض الفلاحي",
-      logo: "https://ucarecdn.com/d5d5b2e2-8c8d-4d1c-9e5a-f8d8c7d0b5a5/-/format/auto/",
-      arabicName: "القرض الفلاحي للمغرب",
-      withdrawalAddress: "CAM-1357",
-    },
-    {
-      id: 7,
-      name: "القرض المغربي",
-      logo: "https://ucarecdn.com/b5b5b2e2-8c8d-4d1c-9e5a-f8d8c7d0b5a5/-/format/auto/",
-      arabicName: "القرض المغربي",
-      withdrawalAddress: "CM-2468",
-    },
-    {
-      id: 8,
-      name: "بريد بنك",
-      logo: "https://ucarecdn.com/c5c5b2e2-8c8d-4d1c-9e5a-f8d8c7d0b5a5/-/format/auto/",
-      arabicName: "بريد بنك",
-      withdrawalAddress: "PB-9876",
-    },
-    {
-      id: 9,
-      name: "سوسيتي جنرال",
-      logo: "https://ucarecdn.com/d5d5b2e2-8c8d-4d1c-9e5a-f8d8c7d0b5a5/-/format/auto/",
-      arabicName: "سوسيتي جنرال المغرب",
-      withdrawalAddress: "SG-5432",
+      name: "Orange",
+      logo: "https://i.ibb.co/bRNf7nTt/orange.webp",
+      arabicName: "أورنج",
+      withdrawalAddress: "OM-1006",
     },
   ];
+  
   const handlePayment = () => {
     if (!selectedBank || !amount) return;
     const serviceInfo = getServiceInfo();
@@ -192,15 +171,16 @@ function MainComponent() {
               <img
                 src={getServiceInfo()?.logo}
                 alt={service}
-                className="w-24 h-24 object-contain"
+                className="w-24 h-24 object-contain rounded-[20px]"
               />
               <div className="text-right">
+              <p className="text-white/80">
+                  {type === "recharge" ? "سحب الرصيد" : "الحسابشحن"}
+                </p>
                 <h1 className="text-3xl font-bold text-[#FFD700] mb-2">
                   {getServiceInfo()?.displayName || service}
                 </h1>
-                <p className="text-white/80">
-                  {type === "recharge" ? "شحن الحساب" : "سحب الرصيد"}
-                </p>
+                
                 <div className="mt-4 flex gap-4 justify-end">
                   <label className="flex items-center gap-2 cursor-pointer select-none">
                     <input
@@ -277,12 +257,17 @@ function MainComponent() {
                   <img
                     src={selectedBank.logo}
                     alt={selectedBank.name}
-                    className="w-8 h-8 object-contain"
+                    className="w-20 h-20 object-contain rounded-lg"
                   />
+
+
                   <div className="flex flex-col">
                     <span>{selectedBank.arabicName}</span>
                     <span className="text-sm text-[#FFD700]">
-                      سحب: {selectedBank.withdrawalAddress}
+                      الحساب: {selectedBank.withdrawalAddress}
+                    </span>
+                    <span className="text-sm text-[#FFD700]">
+                      الاسم: {selectedBank.withdrawalAddress}
                     </span>
                   </div>
                 </div>
@@ -295,7 +280,6 @@ function MainComponent() {
                 }`}
               ></i>
             </button>
-
             <div
               className={`absolute w-full mt-2 bg-black/85 backdrop-blur-xl border border-[#FFD700]/30 rounded-lg overflow-hidden transition-all duration-300 max-h-[240px] overflow-y-auto z-50 ${
                 isDropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -319,7 +303,7 @@ function MainComponent() {
                   <img
                     src={bank.logo}
                     alt={bank.name}
-                    className="w-6 h-6 object-contain"
+                    className="w-8 h-8 object-contain rounded-md"
                   />
                   <div className="flex flex-col">
                     <span className="text-white text-sm">
