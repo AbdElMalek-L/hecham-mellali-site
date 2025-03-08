@@ -455,74 +455,37 @@ function MainComponent() {
               </div>
             ))}
           </div>
-      <div className="relative bg-black overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
-          <h2 className="text-4xl font-bold text-[#FFD700] text-right mb-16 fade-slide-up opacity-0">
-            خدمات البث المباشر
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mb-24">
-          {streamingProducts.map((product) => (
-              <div
-                key={product.id}
-                className="group bg-gradient-to-br from-black max-w-md via-black/95 to-[#FFD700]/5 rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,215,0,0.15)] border border-[#FFD700]/20 hover:border-[#FFD700]/40 fade-slide-up opacity-0 transform hover:-translate-y-2"
-                style={{
-                  animationDelay: `${product.id * 0.1}s`,
-                }}
-              >
-                <div className="relative h-64 w-full overflow-hidden card-zoom">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"></div>
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover transform transition-all duration-700 hover:scale-110"
-                  />
-                  <div className="absolute top-4 right-4 z-20">
-                    <div className="text-[#FFD700] bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full border border-[#FFD700]/20 text-sm font-bold transform rotate-3 hover:rotate-0 transition-all duration-300">
-                      {product.name}
-                    </div>
-                  </div>
-                </div>
-                <div className="p-8 relative backdrop-blur-sm">
-                  <div className="absolute -top-4 left-8 bg-[#FFD700] text-black px-6 py-2 rounded-full text-sm font-bold shadow-[0_4px_20px_rgba(255,215,0,0.3)] transform hover:scale-105 hover:rotate-2 transition-all duration-300">
-                  <a
-                    href="https://wa.me/+212660536055"
-                  >طلب الآن
 
-                  </a>                  </div>
-                  <p className="text-white/90 text-right text-base mb-6 leading-relaxed">
-                    {product.description}
-                  </p>
-                  
-                </div>
-              </div>
-            ))}
-          </div>
-
-
-        </div>
-      </div>
-
-      
-      <div className="relative bg-black overflow-hidden py-24">
+          <div className="relative bg-black overflow-hidden py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4 fade-slide-up opacity-0">
               تواصل معنا
             </h2>
-            <p className="text-white/80 text-lg fade-slide-up opacity-0" style={{ animationDelay: "0.2s" }}>
+            <p
+              className="text-white/80 text-lg fade-slide-up opacity-0"
+              style={{ animationDelay: "0.2s" }}
+            >
               نحن هنا لمساعدتك ، لا تتردد في الاتصال بنا
             </p>
           </div>
 
-            {/* WhatsApp Card */}
-            <div className="group bg-gradient-to-br from-black via-[#FFD700]/5 to-black rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,215,0,0.15)] border border-[#FFD700]/20 hover:border-[#FFD700]/40 p-8 text-center fade-slide-up opacity-0" style={{ animationDelay: "0.3s" }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div
+              className="group bg-gradient-to-br from-black via-[#FFD700]/5 to-black rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,215,0,0.15)] border border-[#FFD700]/20 hover:border-[#FFD700]/40 p-8 text-center fade-slide-up opacity-0"
+              style={{ animationDelay: "0.3s" }}
+            >
               <div className="h-16 w-16 bg-[#FFD700]/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <i className="fab fa-whatsapp text-[#FFD700] text-3xl"></i>
               </div>
-              <h3 className="text-[#FFD700] text-xl font-bold mb-4">WhatsApp</h3>
-              <p className="text-white/90 mb-6">تواصل معنا عبر الواتساب للرد السريع</p>
-              <a 
-                href="https://wa.me/+212660536055" 
+              <h3 className="text-[#FFD700] text-xl font-bold mb-4">
+                WhatsApp
+              </h3>
+              <p className="text-white/90 mb-6">
+                تواصل معنا عبر الواتساب للرد السريع
+              </p>
+              <a
+                href="https://wa.me/+212660536055"
                 className="inline-flex items-center justify-center gap-2 gradient-shine bg-[#FFD700] text-black px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:scale-105 font-bold"
               >
                 <i className="fab fa-whatsapp"></i>
@@ -530,14 +493,60 @@ function MainComponent() {
               </a>
             </div>
 
-          {/* Footer */}
-          <div className="text-center border-t border-[#FFD700]/20 pt-16 fade-slide-up opacity-0" style={{ animationDelay: "0.6s" }}>
+            <div
+              className="group bg-gradient-to-br from-black via-[#FFD700]/5 to-black rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,215,0,0.15)] border border-[#FFD700]/20 hover:border-[#FFD700]/40 p-8 text-center fade-slide-up opacity-0"
+              style={{ animationDelay: "0.4s" }}
+            >
+              <div className="h-16 w-16 bg-[#FFD700]/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i className="fab fa-instagram text-[#FFD700] text-3xl"></i>
+              </div>
+              <h3 className="text-[#FFD700] text-xl font-bold mb-4">
+                Instagram
+              </h3>
+              <p className="text-white/90 mb-6">
+                تابعنا على انستغرام للعروض الحصرية
+              </p>
+              <a
+                href="https://www.instagram.com/hicham_chtioui007"
+                className="inline-flex items-center justify-center gap-2 gradient-shine bg-[#FFD700] text-black px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:scale-105 font-bold"
+              >
+                <i className="fab fa-instagram"></i>
+                @hicham_chtioui007
+              </a>
+            </div>
+
+            <div
+              className="group bg-gradient-to-br from-black via-[#FFD700]/5 to-black rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,215,0,0.15)] border border-[#FFD700]/20 hover:border-[#FFD700]/40 p-8 text-center fade-slide-up opacity-0"
+              style={{ animationDelay: "0.5s" }}
+            >
+              <div className="h-16 w-16 bg-[#FFD700]/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i className="fab fa-telegram text-[#FFD700] text-3xl"></i>
+              </div>
+              <h3 className="text-[#FFD700] text-xl font-bold mb-4">
+                Telegram
+              </h3>
+              <p className="text-white/90 mb-6">انضم إلى قناتنا على تليجرام</p>
+              <a
+                href="https://t.me/h2mservicepro"
+                className="inline-flex items-center justify-center gap-2 gradient-shine bg-[#FFD700] text-black px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:scale-105 font-bold"
+              >
+                <i className="fab fa-telegram"></i>
+                @h2mservicepro
+              </a>
+            </div>
+          </div>
+
+          <div
+            className="text-center border-t border-[#FFD700]/20 pt-16 fade-slide-up opacity-0"
+            style={{ animationDelay: "0.6s" }}
+          >
             <p className="text-white/60 text-sm">
-              © 2025 جميع الحقوق محفوظة
+              © {new Date().getFullYear()} جميع الحقوق محفوظة
             </p>
           </div>
         </div>
       </div>
+
 
       <style jsx global>{`
         @keyframes float {
