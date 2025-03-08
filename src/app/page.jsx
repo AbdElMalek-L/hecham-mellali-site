@@ -255,7 +255,7 @@ function MainComponent() {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "url('https://ucarecdn.com/66170415-e9d4-4e2b-9d4b-cc580638e51d/WhatsAppImage20250308at120947_57bdc1a4.jpg')",
+              "url('https://ucarecdn.com/d282dae0-053c-4be7-837e-bf7b7f1bd7f5/-/format/auto/')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: "0.15",
@@ -316,7 +316,7 @@ function MainComponent() {
               <div className="floating relative z-10 rounded-2xl overflow-hidden shadow-2xl bg-black/10">
                 <div className="relative">
                   <img
-                    src="https://ucarecdn.com/db45039e-efed-407d-bc0d-5cb91d88d794/-/format/auto/"
+                    src="https://ucarecdn.com/66170415-e9d4-4e2b-9d4b-cc580638e51d/WhatsAppImage20250308at120947_57bdc1a4.jpg"
                     alt="Méthodes de paiement et tarifs disponibles"
                     className="w-full h-auto transform hover:scale-105 transition-transform duration-500"
                   />
