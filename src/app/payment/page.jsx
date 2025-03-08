@@ -158,7 +158,7 @@ function MainComponent() {
         currency === "DH" ? "درهم" : "دولار"
       }`,
       withdrawalAddress:
-        serviceDetails[baseService].withdrawalAddresses[currency],
+        serviceDetails[baseService].withdrawalAddresses,
     };
   };
 
@@ -222,6 +222,10 @@ function MainComponent() {
                       }`}
                     >
                       دولار $
+                      <div className="mt-2 ">
+                        <p>المدينة: {getServiceInfo()?.withdrawalAddress?.USD.city}</p>
+                        <p>العنوان: {getServiceInfo()?.withdrawalAddress?.USD.address}</p>
+                      </div>
                     </span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer select-none">
@@ -250,13 +254,15 @@ function MainComponent() {
                       }`}
                     >
                       درهم DH
+                      <div className="mt-2 ">
+                        <p>المدينة: {getServiceInfo()?.withdrawalAddress?.DH.city}</p>
+                        <p>العنوان: {getServiceInfo()?.withdrawalAddress?.DH.address}</p>
+                      </div>
                     </span>
+                    
                   </label>
                 </div>
-                <div className="mt-2 text-[#FFD700]/80">
-                  <p>المدينة: {getServiceInfo()?.withdrawalAddress?.city}</p>
-                  <p>العنوان: {getServiceInfo()?.withdrawalAddress?.address}</p>
-                </div>
+                
               </div>
             </div>
           </div>
