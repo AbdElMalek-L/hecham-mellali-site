@@ -284,12 +284,15 @@ function MainComponent() {
                   className="text-5xl md:text-6xl font-bold leading-tight fade-slide-up opacity-0"
                   style={{ animationDelay: "0.3s" }}
                 >
-                  <span className="block text-[#FFD700]">DISPONIBLE</span>
-                  <span className="block text-[#FFD700]">RECHARGE PAR ID</span>
+                  <span className="block bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-200 text-transparent bg-clip-text">
+  DISPONIBLE
+</span>
+
+                  <span className="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-transparent bg-clip-text">RECHARGE PAR ID</span>
                 </h1>
 
                 <p
-                  className="text-lg md:text-xl text-[#FFD700]/80 leading-relaxed fade-slide-up opacity-0"
+                  className="text-lg md:text-xl text-yellow-200 leading-relaxed fade-slide-up opacity-0"
                   style={{ animationDelay: "0.6s" }}
                 >
                   نحن نوفر لكم خدمات الشحن والسحب عن طريق ID بسرعة وضمان
@@ -300,7 +303,7 @@ function MainComponent() {
                   className="flex flex-col sm:flex-row gap-4 justify-center md:justify-end fade-slide-up opacity-0"
                   style={{ animationDelay: "0.9s" }}
                 >
-                  <button className="gradient-shine bg-[#FFD700] text-black px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-[0_10px_20px_-10px_rgba(255,215,0,0.4)] hover:scale-105 transform-gpu font-bold">
+                  <button className="gradient-shine bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 text-black px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-[0_10px_20px_-10px_rgba(255,215,0,0.4)] hover:scale-105 transform-gpu font-bold">
                     تصفح المنتجات
                   </button>
                   <a
@@ -371,7 +374,7 @@ function MainComponent() {
                       </span>
                     </a>
                     <a
-                      href="https://wa.me/+212660536055"
+                      href={`/payment?service=${product.name}&type=recharge`}
                       className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
                     >
                       <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
@@ -427,6 +430,43 @@ function MainComponent() {
           </div>
 
 
+        </div>
+      </div>
+
+      
+      <div className="relative bg-black overflow-hidden py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#FFD700] mb-4 fade-slide-up opacity-0">
+              تواصل معنا
+            </h2>
+            <p className="text-white/80 text-lg fade-slide-up opacity-0" style={{ animationDelay: "0.2s" }}>
+              نحن هنا لمساعدتك ، لا تتردد في الاتصال بنا
+            </p>
+          </div>
+
+            {/* WhatsApp Card */}
+            <div className="group bg-gradient-to-br from-black via-[#FFD700]/5 to-black rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,215,0,0.15)] border border-[#FFD700]/20 hover:border-[#FFD700]/40 p-8 text-center fade-slide-up opacity-0" style={{ animationDelay: "0.3s" }}>
+              <div className="h-16 w-16 bg-[#FFD700]/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i className="fab fa-whatsapp text-[#FFD700] text-3xl"></i>
+              </div>
+              <h3 className="text-[#FFD700] text-xl font-bold mb-4">WhatsApp</h3>
+              <p className="text-white/90 mb-6">تواصل معنا عبر الواتساب للرد السريع</p>
+              <a 
+                href="https://wa.me/+212660536055" 
+                className="inline-flex items-center justify-center gap-2 gradient-shine bg-[#FFD700] text-black px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:scale-105 font-bold"
+              >
+                <i className="fab fa-whatsapp"></i>
+                06.60.53.60.55
+              </a>
+            </div>
+
+          {/* Footer */}
+          <div className="text-center border-t border-[#FFD700]/20 pt-16 fade-slide-up opacity-0" style={{ animationDelay: "0.6s" }}>
+            <p className="text-white/60 text-sm">
+              © 2025 جميع الحقوق محفوظة
+            </p>
+          </div>
         </div>
       </div>
 
