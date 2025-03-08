@@ -19,11 +19,11 @@ function MainComponent() {
       logo: "https://ucarecdn.com/29cb20bc-cf95-46b4-a244-10b0e58a3d17/1xbet.jpg",
       withdrawalAddresses: {
         DH: {
-          city: "بني ملال",
-          address: "ATF DH",
+          city: "Beni mallal",
+          address: "Atf dh",
         },
         USD: {
-          city: "بني ملال",
+          city: "Beni mellal",
           address: "H2M service pro",
         },
       },
@@ -33,12 +33,12 @@ function MainComponent() {
       logo: "https://ucarecdn.com/e8c18818-7713-4657-ae39-44610a66636e/linebet.jpg",
       withdrawalAddresses: {
         DH: {
-          city: "سوق السبت",
+          city: "Seuk sebt",
           address: "Hicha2M",
         },
         USD: {
-          city: "سوق السبت",
-          address: "Hicha2M",
+          city: "",
+          address: "",
         },
       },
     },
@@ -47,11 +47,11 @@ function MainComponent() {
       logo: "https://ucarecdn.com/5f829dcb-8d1c-45e4-9850-d2f7f64c79d0/betwinner.jpg",
       withdrawalAddresses: {
         DH: {
-          city: "بني ملال",
-          address: "الداخلة",
+          city: "Beni mallal",
+          address: "Dakhela",
         },
         USD: {
-          city: "بني ملال",
+          city: "Beni mallal",
           address: "Dakhela01",
         },
       },
