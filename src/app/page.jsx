@@ -12,10 +12,7 @@ function MainComponent() {
 
   useEffect(() => {
     setIsVisible(true);
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-      handleRevealElements();
-    };
+    
     const handleRevealElements = () => {
       const elements = document.querySelectorAll(".reveal-on-scroll");
       elements.forEach((el) => {
@@ -25,6 +22,10 @@ function MainComponent() {
           el.classList.add("visible");
         }
       });
+    };
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      handleRevealElements();
     };
     const handleParallax = () => {
       const parallaxElements = document.querySelectorAll(".parallax-bg");
@@ -325,10 +326,7 @@ function MainComponent() {
           </div>
         </div>
       </div>
-
-      <div className="relative bg-black overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
-        <h2 className="text-4xl font-bold text-[#FFD700] text-right mb-16 fade-slide-up opacity-0">
+      <h2 className="text-4xl font-bold text-[#FFD700] text-right mb-16 fade-slide-up opacity-0">
             خدمات المراهنات الرياضية
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
@@ -384,6 +382,8 @@ function MainComponent() {
               </div>
             ))}
           </div>
+      <div className="relative bg-black overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
           <h2 className="text-4xl font-bold text-[#FFD700] text-right mb-16 fade-slide-up opacity-0">
             خدمات البث المباشر
           </h2>
