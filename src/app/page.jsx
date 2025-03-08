@@ -255,7 +255,7 @@ function MainComponent() {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "url('https://ucarecdn.com/d282dae0-053c-4be7-837e-bf7b7f1bd7f5/-/format/auto/')",
+              "url('https://ucarecdn.com/66170415-e9d4-4e2b-9d4b-cc580638e51d/WhatsAppImage20250308at120947_57bdc1a4.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: "0.15",
