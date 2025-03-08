@@ -389,11 +389,11 @@ function MainComponent() {
           <h2 className="text-4xl font-bold text-[#FFD700] text-right mb-16 fade-slide-up opacity-0">
             خدمات البث المباشر
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 mb-24">
-            {streamingProducts.map((product) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mb-24">
+          {streamingProducts.map((product) => (
               <div
                 key={product.id}
-                className="group bg-gradient-to-br from-black via-black/95 to-[#FFD700]/5 rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,215,0,0.15)] border border-[#FFD700]/20 hover:border-[#FFD700]/40 fade-slide-up opacity-0 transform hover:-translate-y-2"
+                className="group bg-gradient-to-br from-black max-w-md via-black/95 to-[#FFD700]/5 rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,215,0,0.15)] border border-[#FFD700]/20 hover:border-[#FFD700]/40 fade-slide-up opacity-0 transform hover:-translate-y-2"
                 style={{
                   animationDelay: `${product.id * 0.1}s`,
                 }}
