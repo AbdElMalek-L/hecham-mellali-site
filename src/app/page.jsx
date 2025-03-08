@@ -79,7 +79,7 @@ function MainComponent() {
       name: "1XBET",
       description: "منصة المراهنات الرياضية الأكثر موثوقية",
       image:
-        "/img/1xbet.jpg",
+        "https://ucarecdn.com/29cb20bc-cf95-46b4-a244-10b0e58a3d17/1xbet.jpg",
       bgColor: "bg-black",
     },
     {
@@ -87,7 +87,7 @@ function MainComponent() {
       name: "BETWINNER",
       description: "منصة رائدة في المراهنات الرياضية",
       image:
-        "https://ucarecdn.com/e9c69aa5-02c7-4cdc-9881-207230c3c7bd/-/format/auto/",
+        "https://ucarecdn.com/5f829dcb-8d1c-45e4-9850-d2f7f64c79d0/betwinner.jpg",
       bgColor: "bg-black",
     },
     {
@@ -95,7 +95,7 @@ function MainComponent() {
       name: "LINEBET",
       description: "منصة مراهنات رياضية موثوقة وآمنة",
       image:
-        "/img/linebet.jpg",
+        "https://ucarecdn.com/e8c18818-7713-4657-ae39-44610a66636e/linebet.jpg",
       bgColor: "bg-black",
     },
     {
@@ -111,7 +111,7 @@ function MainComponent() {
       name: "USDT",
       description: "عملة رقمية مستقرة للمعاملات",
       image:
-        "https://ucarecdn.com/c068c30f-962b-4e58-9036-c393aae525aa/-/format/auto/",
+        "https://ucarecdn.com/57fa51cc-a6b1-4ab9-a2ea-6e7b61ca36af/usdt.jpg",
       bgColor: "bg-black",
     },
   ];
