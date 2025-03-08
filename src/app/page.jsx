@@ -79,7 +79,7 @@ function MainComponent() {
       name: "1XBET",
       description: "منصة المراهنات الرياضية الأكثر موثوقية",
       image:
-        "https://ucarecdn.com/454b9772-20a5-4c89-acc4-6fbed5ef3baf/-/format/auto/",
+        "/img/1xbet.jpg",
       bgColor: "bg-black",
     },
     {
@@ -95,7 +95,7 @@ function MainComponent() {
       name: "LINEBET",
       description: "منصة مراهنات رياضية موثوقة وآمنة",
       image:
-        "https://ucarecdn.com/86ee43bc-ba9f-4c1d-93b8-91350c6cf695/-/format/auto/",
+        "/img/linebet.jpg",
       bgColor: "bg-black",
     },
     {
