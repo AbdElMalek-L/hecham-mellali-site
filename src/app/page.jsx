@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import {useState, useEffect} from "react";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 function MainComponent() {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -150,7 +152,7 @@ function MainComponent() {
                 className="text-2xl text-[#FFD700] md:hidden"
                 onClick={() => setIsSidebarOpen(true)}
               >
-                <i className="fas fa-bars">III</i>
+                <i className="fas fa-bars"></i>
               </button>
             </div>
 
