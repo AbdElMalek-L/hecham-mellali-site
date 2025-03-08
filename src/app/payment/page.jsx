@@ -6,6 +6,10 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 function MainComponent() {
   const [selectedBank, setSelectedBank] = useState(null);
   const [amount, setAmount] = useState("");
+  const [id, setID] = useState("");
+  const [code, setCode] = useState("");
+  const [account, setAccount] = useState("");
+  const [name, setName] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [service, setService] = useState(null);
@@ -80,42 +84,50 @@ function MainComponent() {
       name: "التجاري وفا بنك",
       logo: "https://i.ibb.co/MDMKd9dx/attijariwafabank.jpg",
       arabicName: "التجاري وفا بنك",
-      withdrawalAddress: "AWB-1001",
+      username: "M.Chtioui Hicham",
+      withdrawalAddress: "007095000405700030685565",
     },
     {
       id: 2,
       name: "بريد بنك",
       logo: "https://i.ibb.co/HLxbP1KF/barid.png",
       arabicName: "بريد بنك",
-      withdrawalAddress: "PB-1002",
+      withdrawalAddress: "11973112",
+      username: "chtioui hicham"
+
     },
     {
       id: 3,
       name: "Inwi",
       logo: "https://i.ibb.co/dJw5qtq6/brand.gif",
       arabicName: "إنوي",
-      withdrawalAddress: "IM-1003",
+      withdrawalAddress: "0695300043",
+      username: "hicham el mellali"
+
     },
     {
       id: 4,
       name: "كاش بلوس",
       logo: "https://i.ibb.co/KcPGVdRJ/cashplus.jpg",
+      username: "hicham el mellali",
       arabicName: "كاش بلوس",
-      withdrawalAddress: "CP-1004",
+      withdrawalAddress: "0707116342",
     },
     {
       id: 5,
       name: "بنك CIH",
       logo: "https://i.ibb.co/ymsFDKnH/cih.png",
+      username: "hicham el mellali",
       arabicName: "البنك التجاري العقاري والسياحي",
-      withdrawalAddress: "CIH-1005",
+      withdrawalAddress: "2486615225021000",
     },
     {
       id: 6,
       name: "Orange",
       logo: "https://i.ibb.co/bRNf7nTt/orange.webp",
+      username: "hicham el mellali",
       arabicName: "أورنج",
-      withdrawalAddress: "OM-1006",
+      withdrawalAddress: "077111490",
     },
   ];
   
@@ -129,8 +141,10 @@ function MainComponent() {
       }\n` +
         `البنك: ${selectedBank.arabicName}\n` +
         `المبلغ: ${amount} ${currency}\n` +
-        `المدينة: ${serviceInfo?.withdrawalAddress?.city}\n` +
-        `العنوان: ${serviceInfo?.withdrawalAddress?.address}`
+        `كود السحب: ${code}\n` +
+        `ID: ${id}\n` +
+        `الاسم الكامل: ${name}\n` +
+        `رقم الحساب البنكي: ${account}\n` 
     );
     window.open(`https://wa.me/+212660536055?text=${message}`, "_blank");
   };
@@ -267,7 +281,7 @@ function MainComponent() {
                       الحساب: {selectedBank.withdrawalAddress}
                     </span>
                     <span className="text-sm text-[#FFD700]">
-                      الاسم: {selectedBank.withdrawalAddress}
+                      الاسم: {selectedBank.username}
                     </span>
                   </div>
                 </div>
@@ -310,7 +324,7 @@ function MainComponent() {
                       {bank.arabicName}
                     </span>
                     <span className="text-sm text-[#FFD700]">
-                      سحب: {bank.withdrawalAddress}
+                      الحساب: {bank.withdrawalAddress}
                     </span>
                   </div>
                 </div>
@@ -328,9 +342,54 @@ function MainComponent() {
               min="0"
               step="any"
             />
+            
             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 pointer-events-none">
               {currency}
             </span>
+          </div>
+          <div className="relative">
+          <input
+              type="text"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+              placeholder={`رقم الحساب ID`}
+              className="w-full bg-black text-white p-4 rounded-lg border border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300 focus:outline-none focus:border-[#FFD700] cursor-text"
+              min="0"
+              step="any"
+            />
+          </div>
+          <div className="relative">
+          <input
+              type="text"
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              placeholder={`كود السحب`}
+              className="w-full bg-black text-white p-4 rounded-lg border border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300 focus:outline-none focus:border-[#FFD700] cursor-text"
+              min="0"
+              step="any"
+            />
+          </div>
+          <div className="relative">
+          <input
+              type="text"
+              value={account}
+              onChange={(e) => setAccount(e.target.value)}
+              placeholder={`رقم الحساب البنكي لدفه ارباحك`}
+              className="w-full bg-black text-white p-4 rounded-lg border border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300 focus:outline-none focus:border-[#FFD700] cursor-text"
+              min="0"
+              step="any"
+            />
+          </div>
+          <div className="relative">
+          <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder={`الاسمك الكامل في حسابك البنكي`}
+              className="w-full bg-black text-white p-4 rounded-lg border border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300 focus:outline-none focus:border-[#FFD700] cursor-text"
+              min="0"
+              step="any"
+            />
           </div>
           <button
             onClick={handlePayment}
