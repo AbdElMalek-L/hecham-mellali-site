@@ -341,20 +341,19 @@ function MainComponent() {
                 }}
               >
                 <div className="p-4 md:p-8 relative">
-                  <div className="h-24 md:h-32 mb-4 md:mb-6 flex items-center justify-center p-3 md:p-4 bg-black/30 rounded-xl backdrop-blur-sm">
-                    <div className="relative w-full h-full flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-110">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-auto h-auto max-h-full max-w-full object-contain rounded-full filter brightness-110 drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]"
-                        style={{
-                          aspectRatio: "1",
-                          width: "auto",
-                          height: "100%",
-                        }}
-                      />
+                    <div className="h-24 md:h-32 mb-4 md:mb-6 flex items-center justify-center p-3 md:p-4 bg-black/30 rounded-xl backdrop-blur-sm">
+                      <div className="relative w-full h-full flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-110">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover rounded-full filter brightness-110 drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]"                          style={{
+                            aspectRatio: "1",
+                            width: "auto",
+                            height: "100%",
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div>
                   <h2 className="text-lg md:text-2xl font-bold text-[#FFD700] text-center mb-2 md:mb-3 glow-text relative">
                     <span className="relative z-10">{product.name}</span>
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFD700]/10 to-transparent opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-500"></span>
