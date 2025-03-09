@@ -12,7 +12,7 @@ function MainComponent() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("home");
 
-  const payment = "/hecham-mellali-site/payment";
+  const payment = "hecham-mellali-site/payment";
 
   useEffect(() => {
     setIsVisible(true);
@@ -60,12 +60,14 @@ function MainComponent() {
   const streamingProducts = [
     {
       id: 1,
-      name: "NETFLIX",
-      description: "خدمة بث الأفلام والمسلسلات الرائدة عالمياً",
+      name: "NETFLIX 4K",
+      description: " خدمة بث الأفلام والمسلسلات الرائدة عالمياً 4K",
       prices: [
-        { duration: "شهر", price: "74:99" },
-        { duration: "3 أشهر", price: "199:99" },
-        { duration: "6 أشهر", price: "349:99" },
+        { duration: "40 يوم", price: "65" },
+        { duration: "3 أشهر", price: "140" },
+        { duration: "4 أشهر", price: "190" },
+        { duration: "6 أشهر", price: "270" },
+        { duration: "سنة", price: "500" },
       ],
     image:
         "https://ucarecdn.com/8b357142-a7d0-47a3-bdc7-c2c83895ba29/-/format/auto/",
@@ -352,7 +354,7 @@ function MainComponent() {
         <div className="h-[150px]">
 
         </div>
-        <div className="max-w-7xl mx-auto px- sm:px-6 lg:px-8 py-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
           <div className="flex flex-col items-center">
             <div className="w-full text-center md:text-right mb-12">
               <div className="space-y-8 max-w-3xl mx-auto md:mr-0">
@@ -361,8 +363,8 @@ function MainComponent() {
                   style={{ animationDelay: "0.3s" }}
                 >
                   <span className="block bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-200 text-transparent bg-clip-text">
-  DISPONIBLE
-</span>
+                    DISPONIBLE
+                  </span>
 
                   <span className="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-transparent bg-clip-text">WITHDRAWAL PAR ID</span>
                 </h1>
@@ -518,7 +520,7 @@ function MainComponent() {
                     href="https://wa.me/+212660536055"
                   >طلب الآن</a>
                   </div>
-                  <p className="text-white/90 text-right text-base mb-6 leading-relaxed">
+                  <p className="text-white/90 text-right text-base mb-6 leading-relaxed" dir="rtl">
                     {product.description}
                   </p>
                     <div className="text-right mb-6 space-y-2">
