@@ -340,9 +340,15 @@ function MainComponent() {
                     <span className="text-sm text-[#FFD700]">
                       الحساب: {selectedBank.withdrawalAddress}
                     </span>
-                    <span className="text-sm text-[#FFD700]">
+                    {selectedBank.name ==="Inwi" ? (
+                      <p dir="rtl" className="text-sm text-[#FFFFFF]">
+                         نقبل ايضا الشحن ببطاقة التعبئة انوي(INWi)50  درهم فما فوق
+                      </p>
+                    ) : (
+                      <span className="text-sm text-[#FFD700]">
                       الاسم: {selectedBank.username}
-                    </span>
+                      </span>
+                    )}
                   </div>
                 </div>
               ) : (
