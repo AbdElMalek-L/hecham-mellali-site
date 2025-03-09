@@ -74,7 +74,7 @@ function MainComponent() {
     },
     {
       id: 2,
-      name: "BEIN SPORTS",
+      name: "BEINSPORTS",
       description: "أفضل تغطية رياضية مباشرة للمباريات العالمية",
       prices: [
         { duration: "3 أشهر", price: "520" },
@@ -517,7 +517,7 @@ function MainComponent() {
                 <div className="p-8 relative backdrop-blur-sm">
                   <div className="absolute -top-4 left-8 bg-[#FFD700] text-black px-6 py-2 rounded-full text-sm font-bold shadow-[0_4px_20px_rgba(255,215,0,0.3)] transform hover:scale-105 hover:rotate-2 transition-all duration-300">
                   <a
-                    href="https://wa.me/+212660536055"
+                    href={`/${payment}?service=${product.name}&type=recharge`}
                   >طلب الآن</a>
                   </div>
                   <p className="text-white/90 text-right text-base mb-6 leading-relaxed" dir="rtl">
@@ -534,17 +534,15 @@ function MainComponent() {
                         </p>
                       ))}
                     </div>
-
-                  
                 </div>
               </div>
             ))}
           </div>
-
-
         </div>
       </div>
-          <div className="relative bg-black overflow-hidden py-24">
+
+      
+      <div className="relative bg-black overflow-hidden py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4 fade-slide-up opacity-0">

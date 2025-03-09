@@ -16,7 +16,7 @@ function MainComponent() {
   const [service, setService] = useState(null);
   const [type, setType] = useState(null);
   const [currency, setCurrency] = useState("DH");
-  const isStreamingService = service === "NETFLIX" || service === "BEIN SPORTS";
+  const isStreamingService = service === "NETFLIX" || service === "BEINSPORTS";
   const dropdownRef = useRef(null);
 
   const serviceDetails = {
@@ -78,7 +78,7 @@ function MainComponent() {
     },
     BEINSPORTS: {
       id: 2,
-      name: "BEIN SPORTS",
+      name: "BEINSPORTS",
       description: "أفضل تغطية رياضية مباشرة للمباريات العالمية",
       prices: [
         { duration: "3 أشهر", price: "520" },
@@ -186,7 +186,12 @@ function MainComponent() {
     return {
       ...serviceDetails[baseService],
       displayName: `${serviceDetails[baseService].name} ${
-        currency === "DH" ? "درهم" : "دولار"
+        isStreamingService ? (
+          ""
+        ) : (
+          currency  === "DH" ? "درهم" : "دولار"
+        )
+        
       }`,
       withdrawalAddress:
         serviceDetails[baseService].withdrawalAddresses,
@@ -225,8 +230,8 @@ function MainComponent() {
                 <h1 className="text-3xl font-bold text-[#FFD700] mb-2">
                   {getServiceInfo()?.displayName || service}
                 </h1>
-                
-                <div className="mt-4 flex gap-4 justify-end">
+                {!isStreamingService && (
+                  <div className="mt-4 flex gap-4 justify-end">
                   <label className="flex items-center gap-2 cursor-pointer select-none">
                     <input
                       type="radio"
@@ -309,6 +314,8 @@ function MainComponent() {
                     
                   </label>
                 </div>
+                )}
+                
                 
               </div>
             </div>
