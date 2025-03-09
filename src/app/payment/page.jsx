@@ -9,12 +9,14 @@ function MainComponent() {
   const [id, setId] = useState("");
   const [code, setCode] = useState("");
   const [account, setAccount] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
   const [name, setName] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [service, setService] = useState(null);
   const [type, setType] = useState(null);
   const [currency, setCurrency] = useState("DH");
+  const isStreamingService = service === "NETFLIX" || service === "BEIN SPORTS";
   const dropdownRef = useRef(null);
 
   const serviceDetails = {
@@ -59,6 +61,32 @@ function MainComponent() {
           address: "Dakhela01",
         },
       },
+    },
+    NETFLIX: {
+      id: 1,
+      name: "NETFLIX 4K",
+      description: " خدمة بث الأفلام والمسلسلات الرائدة عالمياً 4K",
+      prices: [
+        { duration: "40 يوم", price: "65" },
+        { duration: "3 أشهر", price: "140" },
+        { duration: "4 أشهر", price: "190" },
+        { duration: "6 أشهر", price: "270" },
+        { duration: "سنة", price: "500" },
+      ],
+    logo:
+        "https://ucarecdn.com/8b357142-a7d0-47a3-bdc7-c2c83895ba29/-/format/auto/",
+    },
+    BEINSPORTS: {
+      id: 2,
+      name: "BEIN SPORTS",
+      description: "أفضل تغطية رياضية مباشرة للمباريات العالمية",
+      prices: [
+        { duration: "3 أشهر", price: "520" },
+        { duration: "6 أشهر", price: "1040" },
+        { duration: "12 أشهر", price: "2050" },
+      ],
+      logo:
+        "https://ucarecdn.com/d1d625eb-d39f-4f7f-bb80-b5311bf2c525/-/format/auto/",
     },
   };
 
@@ -141,10 +169,13 @@ function MainComponent() {
       }\n` +
         `البنك: ${selectedBank.arabicName}\n` +
         `المبلغ: ${amount} ${currency}\n` +
-        `كود السحب: ${code}\n` +
         `ID: ${id}\n` +
-        `الاسم الكامل: ${name}\n` +
-        `رقم الحساب البنكي: ${account}\n` 
+        `${isStreamingService ? `رقم البطاقة: ${cardNumber}\n` : ""}` +
+        (type === "withdrawal"
+          ? `كود السحب: ${code}\n` +
+            `الاسم الكامل: ${name}\n` +
+            `رقم الحساب البنكي: ${account}\n`
+          : ""),
     );
     window.open(`https://wa.me/+212660536055?text=${message}`, "_blank");
   };
@@ -369,6 +400,17 @@ function MainComponent() {
               {currency}
             </span>
           </div>
+          {isStreamingService ? (
+            <div className="relative">
+              <input
+                type="text"
+                value={cardNumber}
+                onChange={(e) => setCardNumber(e.target.value)}
+                placeholder="رقم البطاقة (ID CARTE)"
+                className="w-full bg-black text-white p-4 rounded-lg border border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300 focus:outline-none focus:border-[#FFD700] cursor-text"
+              />
+            </div>
+          ) : (
           <div className="relative">
           <input
               type="text"
@@ -380,7 +422,7 @@ function MainComponent() {
               step="any"
             />
           </div>
-
+        )}
           {type === "withdrawal" ? (
             <>
 
