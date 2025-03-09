@@ -444,7 +444,7 @@ function MainComponent() {
                     {product.name === "SKRILL" || product.name === "USDT" ? (
                       <>
                         <a
-                          href={`/payment?service=${product.name}&type=buy`}
+                          href={`/${payment}?service=${product.name}&type=buy`}
                           className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
                         >
                           <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
@@ -463,7 +463,7 @@ function MainComponent() {
                     ) : (
                       <>
                         <a
-                          href={`/payment?service=${product.name}&type=withdrawl`}
+                          href={`/${payment}?service=${product.name}&type=withdrawl`}
                           className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
                         >
                           <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
@@ -471,7 +471,7 @@ function MainComponent() {
                           </span>
                         </a>
                         <a
-                          href={`/payment?service=${product.name}&type=recharge`}
+                          href={`/${payment}?service=${product.name}&type=recharge`}
                           className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
                         >
                           <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
