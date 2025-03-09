@@ -94,7 +94,7 @@ function MainComponent() {
       id: 6,
       name: "SKRILL",
       description: "محفظة رقمية للمعاملات الآمنة",
-      image:
+      logo:
         "https://ucarecdn.com/b166bc70-89e1-4146-b256-505b61e14ba0/-/format/auto/",
       bgColor: "bg-black",
     },
@@ -102,7 +102,7 @@ function MainComponent() {
       id: 7,
       name: "USDT",
       description: "عملة رقمية مستقرة للمعاملات",
-      image:
+      logo:
         "https://ucarecdn.com/57fa51cc-a6b1-4ab9-a2ea-6e7b61ca36af/usdt.jpg",
       bgColor: "bg-black",
     },
