@@ -12,7 +12,7 @@ function MainComponent() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("home");
 
-  const payment = "hecham-mellali-site/payment";
+  const payment = "payment";
 
   useEffect(() => {
     setIsVisible(true);
