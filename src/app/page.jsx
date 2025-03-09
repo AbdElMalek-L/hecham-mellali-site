@@ -60,7 +60,7 @@ function MainComponent() {
   const streamingProducts = [
     {
       id: 1,
-      name: "NETFLIX 4K",
+      name: "NETFLIX",
       description: " خدمة بث الأفلام والمسلسلات الرائدة عالمياً 4K",
       prices: [
         { duration: "40 يوم", price: "65" },
