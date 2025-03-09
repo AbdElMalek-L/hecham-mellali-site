@@ -62,15 +62,23 @@ function MainComponent() {
       id: 1,
       name: "NETFLIX",
       description: "خدمة بث الأفلام والمسلسلات الرائدة عالمياً",
-      price: "49:99",
-      image:
+      prices: [
+        { duration: "شهر", price: "74:99" },
+        { duration: "3 أشهر", price: "199:99" },
+        { duration: "6 أشهر", price: "349:99" },
+      ],
+    image:
         "https://ucarecdn.com/8b357142-a7d0-47a3-bdc7-c2c83895ba29/-/format/auto/",
     },
     {
       id: 2,
       name: "BEIN SPORTS",
       description: "أفضل تغطية رياضية مباشرة للمباريات العالمية",
-      price: "79:99",
+      prices: [
+        { duration: "3 أشهر", price: "520" },
+        { duration: "6 أشهر", price: "1040" },
+        { duration: "12 أشهر", price: "2050" },
+      ],
       image:
         "https://ucarecdn.com/d1d625eb-d39f-4f7f-bb80-b5311bf2c525/-/format/auto/",
     },
@@ -356,7 +364,7 @@ function MainComponent() {
   DISPONIBLE
 </span>
 
-                  <span className="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-transparent bg-clip-text">RECHARGE PAR ID</span>
+                  <span className="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-transparent bg-clip-text">WITHDRAWL PAR ID</span>
                 </h1>
 
                 <p
@@ -401,7 +409,7 @@ function MainComponent() {
       </div>
       <h2 className="text-4xl font-bold text-[#FFD700] text-right mb-16 fade-slide-up opacity-0">
             خدمات المراهنات الرياضية
-          </h2>
+      </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {bettingProducts.map((product) => (
               <div
@@ -433,29 +441,107 @@ function MainComponent() {
                     {product.description}
                   </p>
                   <div className="flex flex-row gap-2 md:gap-3">
-                    <a
-                      href="https://wa.me/+212660536055"
-                      className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
-                    >
-                      <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
-                        شحن
-                      </span>
-                    </a>
-                    <a
-                      href={`${payment}?service=${product.name}&type=recharge`}
-
-                      className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
-                    >
-                      <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
-                        سحب
-                      </span>
-                    </a>
+                    {product.name === "SKRILL" || product.name === "USDT" ? (
+                      <>
+                        <a
+                          href={`/payment?service=${product.name}&type=buy`}
+                          className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
+                        >
+                          <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
+                            شراء
+                          </span>
+                        </a>
+                        <a
+                          href="https://wa.me/+212660536055"
+                          className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
+                        >
+                          <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
+                            بيع
+                          </span>
+                        </a>
+                      </>
+                    ) : (
+                      <>
+                        <a
+                          href={`/payment?service=${product.name}&type=withdrawl`}
+                          className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
+                        >
+                          <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
+                            شحن
+                          </span>
+                        </a>
+                        <a
+                          href={`/payment?service=${product.name}&type=recharge`}
+                          className="flex-1 group/btn gradient-shine bg-black text-[#FFD700] border border-[#FFD700] px-3 md:px-6 py-2 md:py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:scale-105 flex items-center justify-center gap-2 font-bold overflow-hidden relative text-sm md:text-base"
+                        >
+                          <span className="relative z-10 group-hover/btn:translate-y-px transition-transform duration-300">
+                            سحب
+                          </span>
+                        </a>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
+          <div className="relative bg-black overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
+          <h2 className="text-4xl font-bold text-[#FFD700] text-right mb-16 fade-slide-up opacity-0">
+            خدمات البث المباشر
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mb-24">
+          {streamingProducts.map((product) => (
+              <div
+                key={product.id}
+                className="group bg-gradient-to-br from-black max-w-md via-black/95 to-[#FFD700]/5 rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,215,0,0.15)] border border-[#FFD700]/20 hover:border-[#FFD700]/40 fade-slide-up opacity-0 transform hover:-translate-y-2"
+                style={{
+                  animationDelay: `${product.id * 0.1}s`,
+                }}
+              >
+                <div className="relative h-64 w-full overflow-hidden card-zoom">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"></div>
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transform transition-all duration-700 hover:scale-110"
+                  />
+                  <div className="absolute top-4 right-4 z-20">
+                    <div className="text-[#FFD700] bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full border border-[#FFD700]/20 text-sm font-bold transform rotate-3 hover:rotate-0 transition-all duration-300">
+                      {product.name}
+                    </div>
+                  </div>
+                </div>
+                <div className="p-8 relative backdrop-blur-sm">
+                  <div className="absolute -top-4 left-8 bg-[#FFD700] text-black px-6 py-2 rounded-full text-sm font-bold shadow-[0_4px_20px_rgba(255,215,0,0.3)] transform hover:scale-105 hover:rotate-2 transition-all duration-300">
+                  <a
+                    href="https://wa.me/+212660536055"
+                  >طلب الآن</a>
+                  </div>
+                  <p className="text-white/90 text-right text-base mb-6 leading-relaxed">
+                    {product.description}
+                  </p>
+                    <div className="text-right mb-6 space-y-2">
+                      <p className="text-[#FFD700] font-bold mb-2" dir="rtl">الأسعار:</p>
+                      {product.prices.map((priceOption, index) => (
+                        <p key={index} className="text-white/90 text-base" dir="rtl">
+                          <span className="text-[#FFD700]" >
+                            {priceOption.duration}
+                          </span>
+                          : {priceOption.price} DH
+                        </p>
+                      ))}
+                    </div>
 
+                  
+                </div>
+              </div>
+            ))}
+          </div>
+
+
+        </div>
+      </div>
           <div className="relative bg-black overflow-hidden py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">

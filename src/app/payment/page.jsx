@@ -6,7 +6,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 function MainComponent() {
   const [selectedBank, setSelectedBank] = useState(null);
   const [amount, setAmount] = useState("");
-  const [id, setID] = useState("");
+  const [id, setId] = useState("");
   const [code, setCode] = useState("");
   const [account, setAccount] = useState("");
   const [name, setName] = useState("");
@@ -136,7 +136,7 @@ function MainComponent() {
     const serviceInfo = getServiceInfo();
 
     const message = encodeURIComponent(
-      `مرحباً، أود ${type === "recharge" ? " سحب " : "شحن"} ${
+      `مرحباً، أود ${type === "withdrawl" ? " سحب " : "شحن"} ${
         serviceInfo?.displayName
       }\n` +
         `البنك: ${selectedBank.arabicName}\n` +
@@ -189,7 +189,7 @@ function MainComponent() {
               />
               <div className="text-right">
               <p className="text-white/80">
-                  {type === "recharge" ? "سحب الرصيد" : "الحسابشحن"}
+                  {type === "withdrawl" ? "شحن الحساب"  :  "سحب الرصيد"}
                 </p>
                 <h1 className="text-3xl font-bold text-[#FFD700] mb-2">
                   {getServiceInfo()?.displayName || service}
@@ -222,10 +222,18 @@ function MainComponent() {
                       }`}
                     >
                       دولار $
-                      <div className="mt-2 ">
-                        <p>المدينة: {getServiceInfo()?.withdrawalAddress?.USD.city}</p>
-                        <p>العنوان: {getServiceInfo()?.withdrawalAddress?.USD.address}</p>
+                      {type === "recharge" ? (
+                      <div className="mt-2">
+                        <p className="text-[#FFD700]">
+                          المدينة:{" "}
+                          {getServiceInfo()?.withdrawalAddress[currency]?.city}
+                        </p>
+                        <p className="text-[#FFD700]">
+                          العنوان:{" "}
+                          {getServiceInfo()?.withdrawalAddress[currency]?.address}
+                        </p>
                       </div>
+                    ) : (<span></span>) }
                     </span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer select-none">
@@ -254,10 +262,18 @@ function MainComponent() {
                       }`}
                     >
                       درهم DH
-                      <div className="mt-2 ">
-                        <p>المدينة: {getServiceInfo()?.withdrawalAddress?.DH.city}</p>
-                        <p>العنوان: {getServiceInfo()?.withdrawalAddress?.DH.address}</p>
+                      {type === "recharge" ? (
+                      <div className="mt-2">
+                        <p className="text-[#FFD700]">
+                          المدينة:{" "}
+                          {getServiceInfo()?.withdrawalAddress[currency]?.city}
+                        </p>
+                        <p className="text-[#FFD700]">
+                          العنوان:{" "}
+                          {getServiceInfo()?.withdrawalAddress[currency]?.address}
+                        </p>
                       </div>
+                    ) : (<span></span>) }
                     </span>
                     
                   </label>
