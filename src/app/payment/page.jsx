@@ -164,7 +164,7 @@ function MainComponent() {
     const serviceInfo = getServiceInfo();
 
     const message = encodeURIComponent(
-      `مرحباً، أود ${type === "withdrawl" ? " سحب " : "شحن"} ${
+      `مرحباً، أود ${type === "withdrawal" ? " سحب " : "شحن"} ${
         serviceInfo?.displayName
       }\n` +
         `البنك: ${selectedBank.arabicName}\n` +
@@ -220,7 +220,7 @@ function MainComponent() {
               />
               <div className="text-right">
               <p className="text-white/80">
-                  {type === "withdrawl" ? "سحب الرصيد"   :  "شحن الحساب"}
+                  {type === "withdrawal" ? "سحب الرصيد"   :  "شحن الحساب"}
                 </p>
                 <h1 className="text-3xl font-bold text-[#FFD700] mb-2">
                   {getServiceInfo()?.displayName || service}
