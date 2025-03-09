@@ -189,7 +189,7 @@ function MainComponent() {
               />
               <div className="text-right">
               <p className="text-white/80">
-                  {type === "withdrawl" ? "شحن الحساب"  :  "سحب الرصيد"}
+                  {type === "withdrawl" ? "سحب الرصيد"   :  "شحن الحساب"}
                 </p>
                 <h1 className="text-3xl font-bold text-[#FFD700] mb-2">
                   {getServiceInfo()?.displayName || service}
@@ -222,7 +222,7 @@ function MainComponent() {
                       }`}
                     >
                       دولار $
-                      {type === "recharge" ? (
+                      {type === "withdrawal" ? (
                       <div className="mt-2">
                         <p className="text-[#FFD700]">
                           المدينة:{" "}
@@ -262,7 +262,7 @@ function MainComponent() {
                       }`}
                     >
                       درهم DH
-                      {type === "recharge" ? (
+                      {type === "withdrawal" ? (
                       <div className="mt-2">
                         <p className="text-[#FFD700]">
                           المدينة:{" "}
@@ -380,7 +380,51 @@ function MainComponent() {
               step="any"
             />
           </div>
-          <div className="relative">
+
+          {type === "withdrawal" ? (
+            <>
+
+              <div className="relative">
+                <input
+                  type="text"
+                  value={code}
+                  onChange={(e) => setCode(e.target.value)}
+                  placeholder={`كود السحب`}
+                  className="w-full bg-black text-white p-4 rounded-lg border border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300 focus:outline-none focus:border-[#FFD700] cursor-text"
+                />
+              </div>
+
+              <div className="relative">
+                <input
+                  type="text"
+                  value={account}
+                  onChange={(e) => setAccount(e.target.value)}
+                  placeholder={`رقم الحساب البنكي لدفه ارباحك`}
+                  className="w-full bg-black text-white p-4 rounded-lg border border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300 focus:outline-none focus:border-[#FFD700] cursor-text"
+                />
+              </div>
+
+              <div className="relative">
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder={`الاسمك الكامل في حسابك البنكي`}
+                  className="w-full bg-black text-white p-4 rounded-lg border border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300 focus:outline-none focus:border-[#FFD700] cursor-text"
+                />
+              </div>
+            </>
+          ) : type === "recharge" ? (
+            <div className="mt-4 p-6 bg-red-500/10 border-2 border-red-500/30 rounded-lg text-center">
+              <p className="text-red-500 text-lg font-bold mb-2">⚠️ تنبيه مهم</p>
+              <p className="text-red-500">
+                يرجى إرسال صورة إيصال التحويل عبر الواتساب بعد إتمام عملية
+                التحويل
+              </p>
+            </div>
+          ) : null}
+
+          {/* <div className="relative">
           <input
               type="text"
               value={code}
@@ -412,7 +456,7 @@ function MainComponent() {
               min="0"
               step="any"
             />
-          </div>
+          </div> */}
           <button
             onClick={handlePayment}
             disabled={!selectedBank || !amount}
