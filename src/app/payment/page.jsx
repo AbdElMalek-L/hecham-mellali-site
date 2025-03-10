@@ -164,7 +164,7 @@ function MainComponent() {
       name: "بنك CIH",
       logo: "https://i.ibb.co/ymsFDKnH/cih.png",
       username: "hicham el mellali",
-      arabicName: "البنك التجاري العقاري والسياحي",
+      arabicName: "بنك CIH",
       withdrawalAddress: "2486615225021000",
     },
     {
